@@ -1,2 +1,4 @@
 # Don't insert WebStorm IDE settings folder
 .idea/
+#mac OS finder settings file
+.DS_Store
