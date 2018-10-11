@@ -40,7 +40,7 @@ jobs:
           # CLOUDFRONT_MORAGTAITE_COM is an environment variable defined in the circle.ci project moragtaite.com
           # It's the CloudFront ID specified on my AWS account
           command: |
-              if [ "${CIRCLE_BRANCH}" === "master" ]; then
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 # Add robots.txt that advices search engines that they can freely index the entire website
                 echo 'User-agent: *
               Disallow:' > public/robots.txt
