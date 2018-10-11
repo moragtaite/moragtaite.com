@@ -31,8 +31,33 @@ jobs:
 
       - deploy:
           name: Deploy site to AWS S3 and invalidate the CloudFront cache
+          # If we are deploying to the dev branch add a robots.txt file to the public foler.
+          # The file signals to search engine crawlers that they should not scan this site.
+          # I don't want dev.moragtaite.com to be searchable, it's only intended for development.
+          # Notice that the second line is not indented. This is on purpose. Otherwise it
+          # will be indented. I tried outputting the file with EOF/END without luck.
+          #
+          # CLOUDFRONT_MORAGTAITE_COM is an environment variable defined in the circle.ci project moragtaite.com
+          # It's the CloudFront ID specified on my AWS account
           command: |
-              # CLOUDFRONT_MORAGTAITE_COM is an environment variable defined in the circle.ci project moragtaite.com
-              # It's the CloudFront ID specified on my AWS account
-              ~/.local/bin/aws s3 sync public/ s3://moragtaite.com/ --delete
-              ~/.local/bin/aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_MORAGTAITE_COM --paths '/*'
+              if [ "${CIRCLE_BRANCH}" === "master" ]; then
+                # Add robots.txt that advices search engines that they can freely index the entire website
+                echo 'User-agent: *
+              Disallow:' > public/robots.txt
+
+                # Push latest contents to the AWS S3 bucket and invalidate (refresh) the CloudFront cache
+                ~/.local/bin/aws s3 sync public/ s3://moragtaite.com/ --delete
+                ~/.local/bin/aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_MORAGTAITE_COM --paths '/*'
+              elif [ "${CIRCLE_BRANCH}" == "dev" ]; then
+                # Add robots.txt that advices search engines not to index dev.moragtaite.com
+                echo 'User-agent: *
+              Disallow: /' > public/robots.txt
+
+                # Push latest contents to the AWS S3 bucket and invalidate (refresh) the CloudFront cache
+                ~/.local/bin/aws s3 sync public/ s3://dev.moragtaite.com/ --delete
+                ~/.local/bin/aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DEV_MORAGTAITE_COM --paths '/*'
+              else
+                echo "Not dev or master branch so not deploying. Ian is cute <3"
+              fi
+
+
