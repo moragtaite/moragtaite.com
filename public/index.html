@@ -1,71 +1,215 @@
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
+
+    <!--- basic page needs
+    ================================================== -->
     <meta charset="utf-8">
-    <meta name="description" content="Morag Taite 🦑🐙">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>Morag Taite 🦑🐙</title>
-    <link rel="icon" data-emoji="🐙" type="image/png"> <!-- See favicon script below -->
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style type="text/css">
-        body {
-            font-size: 22px;
-            font-family: 'Open Sans', sans-serif;
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
 
-            background: linear-gradient(
-                    135deg,
-                    rgba(29, 255, 238, 0.5),
-                    rgba(29, 255, 238, 0.8),
-                    rgba(29, 255, 238, 1.0)
-            );
-        }
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
 
-        h1, p {
-            color: #242424;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-        }
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-        #container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            height: 80%;
-            padding: 2em;
-        }
-    </style>
 </head>
 
-<body>
+<body id="top">
 
-<div id="container">
-    <h1>Morag Taite 🦑🐙</h1>
-    <ul>
-    	<li>twitter: <a href="https://twitter.com/moragtaite">@moragtaite</a></li>
-    </ul>
-</div>
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/ocean.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
-<!-- Emoji as favicon by Kristján Oddsson. https://koddsson.com/posts/emoji-favicon/ -->
-<script>
-  const favicon = document.querySelector("link[rel=icon]");
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
 
-  if (favicon) {
-    const emoji = favicon.getAttribute("data-emoji");
+        <div class="home-content">
 
-    if (emoji) {
-      const canvas = document.createElement("canvas");
-      canvas.height = 64;
-      canvas.width = 64;
+            <div class="row home-content__main">
 
-      const ctx = canvas.getContext("2d");
-      ctx.font = "64px serif";
-      ctx.fillText(emoji, 0, 64);
+                <h1>Morag Taite</h1>
 
-      favicon.href = canvas.toDataURL();
-    }
-  }
-</script>
+                <h3>
+                    PhD student at <br>
+                    the National University of Ireland, Galway. <br>
+                    Studying the evolution of cephalopods.
+                </h3>
+
+                <div class="home-content__buttons">
+                    <a href="mailto:hi@moragtaite.com"class="btn btn--stroke">
+                        Contact me
+                    </a>
+                    <a href="#about" class="smoothscroll btn btn--stroke">
+                        About me
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+
+            <div class="home-content__line"></div>
+
+        </div> <!-- end home-content -->
+
+
+        <ul class="home-social">
+            <li>
+                <a href="https://twitter.com/moragtaite"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/morag-taite-01ab13bb"><i class="fa fa-linkedin" aria-hidden="true"></i><span>Linkdin</span></a>
+            </li>
+            <li>
+                <a href="https://www.researchgate.net/profile/Morag_Taite"><i class="fa fa-researchgate" aria-hidden="true"></i><span>Researchgate</span></a>
+            </li>
+        </ul> 
+        <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id='about' class="s-about">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h1 class="display-1 display-1--light">More about me</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                I am currently persuing a PhD at NUI Galway under the supervision of Prof. Louise Allcock. I am funded through the Irish Research Council Government of Ireland Postgraduate scheme and Dr. Tony Ryan Research scholarship. I am interested in the evoltion of cephalopods using both molecular and morphological data.
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
+
+        <div class="about__line"></div>
+
+    </section> <!-- end s-about -->
+
+
+    <!-- services
+    ================================================== -->
+    <section id='services' class="s-services">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Publications</h3>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row service-text" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                Ringvold, H. and <b>Taite, M. </b>, 2018. Using citizen science to obtain data on large, floating gelatinous spheres from NE Atlantic, attributed to egg mass of ommastrephid squid (Oegopsida, Cephalopoda, Mollusca). Marine Biology Research, pp.1-10.
+                <a href="https://www.tandfonline.com/doi/full/10.1080/17451000.2018.1504165">doi: 10.1080/17451000.2018.1504165</a></li>
+                </p> 
+            </div>
+        </div> <!-- end about-desc -->
+
+    </section> <!-- end s-services -->
+
+
+    <!-- works
+    ================================================== -->
+    <section id='works' class="s-works">
+
+        <div class="intro-wrap">
+                
+            <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
+                <div class="col-full">
+                    <h3 class="subhead">Twitter</h3>
+                </div>
+            </div> <!-- end section-header -->
+
+         </div> <!-- end intro-wrap -->
+
+         <div id="twitter-widget-holder"></div>
+         <a class="twitter-timeline" href="https://twitter.com/moragtaite?ref_src=twsrc%5Etfw" data-widget-id="12345" width="600" data-chrome="transparent noscrollbar" data-tweet-limit="5">Tweets by moragtaite</a> 
+
+         <!-- custom scrollbar CSS -->
+         <link rel="stylesheet" href="http://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+         <!-- jQuery lib -->
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+         <!-- custom scrollbar plugin script -->
+         <script src="http://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+         <script>
+          (function($){
+           $(window).load(function(){
+             /* initialize scrollbar */
+             $("#twitter-widget-holder").mCustomScrollbar({
+               theme:"dark-3",
+               scrollButtons:{enable:true}
+             });
+             /* insert twitter widget js in window load fn */
+             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+           });
+          })(jQuery);
+        </script>
+
+         </div> <!-- end works-content -->
+
+    </section> <!-- end s-works -->
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+    </footer> <!-- end footer -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>
