@@ -31,7 +31,10 @@
  * # imports 
  *
  * ------------------------------------------------------------------- */
-@import url("font-awesome/css/font-awesome.min.css");
+/* 2018-10-11 jónsi: Disabled Font Awesome. The template we are using uses FA v4.
+ * However it's missing an icon for Researchgate which is available in v5 and newer.
+ * Disabled because we include FA directly in index.html */
+/*@import url("font-awesome/css/font-awesome.min.css");*/
 @import url("micons/micons.css");
 @import url("fonts.css");
 
